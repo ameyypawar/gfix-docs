@@ -2,6 +2,12 @@
 
 All notable changes to `gfix`. Versioning: `MAJOR.MINOR.PATCH-prerelease`. Alpha releases use `-alpha`, `-alpha.2`, etc.
 
+## v0.1.0-alpha.6
+
+Standalone CLI dispatch. All seven subcommands wired and shipped: `gfix merge`, `gfix preview`, `gfix resolve`, `gfix status`, `gfix log`, `gfix abort`, `gfix init`. Verified end-to-end against a real repo; `npm install -g @gitfix/cli@alpha` and `brew install ameyypawar/gfix/gfix` both resolve to alpha.6.
+
+Release artifacts: https://github.com/ameyypawar/gfix/releases/tag/v0.1.0-alpha.6
+
 ## v0.1.0-alpha.3 (2026-05-26)
 
 Hardening release. Two PRs landed: AI provider robustness (#101) and env-clear subprocess hardening (#102). Test count 120 -> 122.
@@ -46,7 +52,7 @@ First public alpha. Closed-source binary distribution. Free during alpha.
 
 **Known limitations (tracked, lands alpha.2 or later).**
 
-- Standalone CLI dispatch (`gfix merge feat/a feat/b` from a shell) — today's entry point is the MCP server only.
+- Standalone CLI dispatch (`gfix merge feat/a feat/b` from a shell) — shipped in v0.1.0-alpha.6. See changelog entry above.
 - `gfix doctor` config diagnostics.
 - macOS XDG path divergence: `keys.toml` is read from `~/Library/Application Support/dev.gitfix.gitfix/keys.toml` instead of `~/.config/gitfix/keys.toml`. Documented in [setup.md](setup.md); proper fix at alpha.2.
 - macOS binary is unsigned. Apple Developer ID code signing deferred to v1.0. Workaround in [setup.md](setup.md).
