@@ -17,7 +17,7 @@ curl -fsSL https://gfix.space/install | sh
 ```
 
 ```sh
-npm install -g @gitfix/cli
+npm install -g @gitfix/cli@alpha
 ```
 
 Verify:
@@ -40,9 +40,11 @@ Then from any chat in any repo:
 
 The agent calls `gitfix_merge_preview`, gets back the conflict list, walks each one with `gitfix_conflict_get` + `gitfix_conflict_resolve`, then `gitfix_merge_apply` finalizes. Every accepted resolution lands in `refs/gitfix/rerere/<hash>` so the same conflict on the next branch resolves locally without an AI call.
 
-Prefer the shell? Standalone CLI dispatch (`gfix merge feat/a feat/b`) lands in v0.1.0-alpha.2. Today's supported entry point is the MCP server.
+Prefer the shell? The standalone CLI (`gfix merge`, `gfix resolve`, `gfix preview`, `gfix status`, `gfix log`, `gfix abort`, `gfix init`) shipped in v0.1.0-alpha.6. Install with `npm install -g @gitfix/cli@alpha` or `brew install ameyypawar/gfix/gfix` (both resolve to alpha.6). See [parallel-agents.md](parallel-agents.md) for the shell-first workflow.
 
 Full walkthrough: [setup.md](setup.md).
+
+Running multiple agents in parallel? See [parallel-agents.md](parallel-agents.md).
 
 ## Why is the source private?
 

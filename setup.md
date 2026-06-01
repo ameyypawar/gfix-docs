@@ -36,10 +36,10 @@ Installs to `/usr/local/bin/gfix` by default. Override with `PREFIX=/some/other/
 ### Any Node-equipped machine (npm)
 
 ```sh
-npm install -g @gitfix/cli
+npm install -g @gitfix/cli@alpha
 ```
 
-Installs the platform-appropriate binary via the npm `optionalDependencies` pattern. Useful inside Docker images or CI containers that already have Node.
+Installs the platform-appropriate binary via the npm `optionalDependencies` pattern. The `@alpha` tag is required — the `latest` tag currently points at alpha.4; `@alpha` resolves to alpha.6 (the version with the full CLI surface wired). Useful inside Docker images or CI containers that already have Node.
 
 ---
 
